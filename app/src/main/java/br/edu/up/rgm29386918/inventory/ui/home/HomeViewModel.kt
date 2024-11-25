@@ -14,6 +14,21 @@
  * limitations under the License.
  */
 
-package com.example.inventory.data
+package br.edu.up.rgm29386918.inventory.ui.home
 
-class OfflineItemsRepository : ItemsRepository
+import androidx.lifecycle.ViewModel
+import br.edu.up.rgm29386918.inventory.data.Item
+
+/**
+ * ViewModel to retrieve all items in the Room database.
+ */
+class HomeViewModel : ViewModel() {
+    companion object {
+        private const val TIMEOUT_MILLIS = 5_000L
+    }
+}
+
+/**
+ * Ui State for HomeScreen
+ */
+data class HomeUiState(val itemList: List<Item> = listOf())

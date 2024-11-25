@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.inventory.ui.item
+package br.edu.up.rgm29386918.inventory.ui.item
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.inventory.data.Item
+import br.edu.up.rgm29386918.inventory.data.Item
 import java.text.NumberFormat
 
 /**

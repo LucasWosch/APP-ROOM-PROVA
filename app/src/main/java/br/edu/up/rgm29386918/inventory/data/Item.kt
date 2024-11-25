@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-@file:Suppress("UnstableApiUsage")
+package br.edu.up.rgm29386918.inventory.data
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "AppRoom29386918"
-include(":app")
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+
+/**
+ * Entity data class represents a single row in the database.
+ */
+@Entity(tableName = "items")
+data class Item(
+    @PrimaryKey
+    val id: Int = 0,
+    val name: String,
+    val price: Double,
+    val quantity: Int
+)

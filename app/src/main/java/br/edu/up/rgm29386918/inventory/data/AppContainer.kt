@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.inventory.data
+package br.edu.up.rgm29386918.inventory.data
 
 import android.content.Context
 

@@ -14,21 +14,30 @@
  * limitations under the License.
  */
 
-package com.example.inventory.ui.home
+package br.edu.up.rgm29386918.inventory.ui.item
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.inventory.data.Item
+import br.edu.up.rgm29386918.inventory.data.ItemsRepository
 
 /**
- * ViewModel to retrieve all items in the Room database.
+ * ViewModel to retrieve, update and delete an item from the [ItemsRepository]'s data source.
  */
-class HomeViewModel : ViewModel() {
+class ItemDetailsViewModel(
+    savedStateHandle: SavedStateHandle
+) : ViewModel() {
+
+    private val itemId: Int = checkNotNull(savedStateHandle[ItemDetailsDestination.itemIdArg])
+
     companion object {
         private const val TIMEOUT_MILLIS = 5_000L
     }
 }
 
 /**
- * Ui State for HomeScreen
+ * UI state for ItemDetailsScreen
  */
-data class HomeUiState(val itemList: List<Item> = listOf())
+data class ItemDetailsUiState(
+    val outOfStock: Boolean = true,
+    val itemDetails: ItemDetails = ItemDetails()
+)
